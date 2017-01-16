@@ -43,5 +43,10 @@ namespace ParkingChallenge
 
 			return feeType;
 		}
+
+		public bool GetParkingTest()
+		{
+			return true;
+		}
 	}
 }

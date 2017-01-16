@@ -14,13 +14,17 @@ namespace ParkingChallenge
 	[ServiceContract]
 	public interface IParkingService
 	{
-		[OperationContract]
-		[WebGet]
-		ParkingAvailableType GetParkingAvailability(string lot);
+		//[OperationContract]
+		//[WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+		//ParkingAvailableType GetParkingAvailability(string lot);
 
 		[OperationContract]
-		[WebGet]
-		ParkingFeeType GetParkingFee(long ticket);
+		[WebGet(UriTemplate = "/GetParkingTest")]
+		bool GetParkingTest();
+		//[OperationContract]
+		//[WebGet(UriTemplate = "/GetParkingFee?ticket={ticket}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+		////[WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json,	ResponseFormat = WebMessageFormat.Json,		UriTemplate = "/GetParkingFee?ticket={ticket}")]
+		//ParkingFeeType GetParkingFee(long ticket);
 	}
 
 	[DataContract]
