@@ -43,7 +43,7 @@ namespace ParkingChallengeLibrary
 		/// the hours based off of a ticket "start time"</remarks>
 		/// <param name="ticket">The parking ticket identifier</param>
 		/// <returns>The fees for the parking ticket</returns>
-		public decimal GetParkingFees(long ticket)
+		public decimal GetParkingFees(string ticket)
 		{
 			TimeSpan hours = new TimeSpan();
 			decimal fee = 0.0m;
@@ -53,13 +53,13 @@ namespace ParkingChallengeLibrary
 				//Lookup ticket information
 				switch (ticket)
 				{
-					case 1:
+					case "1":
 						hours = new TimeSpan(1, 0, 0);
 						break;
-					case 2:
+					case "2":
 						hours = new TimeSpan(2, 30, 0);
 						break;
-					case 3:
+					case "3":
 						hours = new TimeSpan(11, 34, 0);
 						break;
 					default:

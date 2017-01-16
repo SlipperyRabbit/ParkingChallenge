@@ -34,7 +34,7 @@ namespace ParkingChallenge
 		/// </summary>
 		/// <param name="ticket">A parking ticket identifier</param>
 		/// <returns>A Parking Fee Type (decimal money value)</returns>		
-		public ParkingFeeType GetParkingFee(long ticket)
+		public ParkingFeeType GetParkingFee(string ticket)
 		{
 			ParkingFeeType feeType = new ParkingFeeType();
 			ParkingChallengeUtilities utilities = new ParkingChallengeUtilities();
