@@ -61,26 +61,26 @@ namespace ParkingChallenge.Test
 		public void TestGetParkingFee()
 		{
 			var target = new ParkingChallengeUtilities();
-			long ticket;
+			string ticket;
 			decimal expectedFee;
 			decimal actualFee;
 
-			ticket = 1;
+			ticket = "1";
 			expectedFee = 5.0m;
 			actualFee = target.GetParkingFees(ticket);
 			Assert.AreEqual(expectedFee, actualFee);
 
-			ticket = 2;
+			ticket = "2";
 			expectedFee = 25.0m;
 			actualFee = target.GetParkingFees(ticket);
 			Assert.AreEqual(expectedFee, actualFee);
 
-			ticket = 3;
+			ticket = "3";
 			expectedFee = 173.5m;
 			actualFee = target.GetParkingFees(ticket);
 			Assert.AreEqual(expectedFee, actualFee);
 
-			ticket = 59; //does not exist
+			ticket = "59"; //does not exist
 			expectedFee = 0.0m;
 			actualFee = target.GetParkingFees(ticket);
 			Assert.AreEqual(expectedFee, actualFee);

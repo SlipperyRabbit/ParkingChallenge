@@ -25,7 +25,7 @@ namespace ParkingChallenge
 			ParkingChallengeUtilities utilities = new ParkingChallengeUtilities();
 
 			availableType.ParkingAvailableValue = utilities.GetParkingAvailability(lot);
-
+			
 			return availableType;
 		}
 
