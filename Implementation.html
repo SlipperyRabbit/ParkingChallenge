@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Challenge</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h2>Parking Challenge</h2>
+
+	<div>
+		<p>
+			Enter Lot to determine parking availablity&nbsp;&nbsp;
+			<input type="text" id="txtLot" value="Lot" />
+			<input type="button" id="btnLot" value="Parking Available" />
+		</p>
+		<p><span id="spParkingAvailableResult"></span></p>
+		<br /><br />
+		<p>
+			Enter ticket number to determine fee&nbsp;&nbsp;
+			<input type="text" id="txtTicket" value="1" />
+			<input type="button" id="btnTicket" value="Parking Fee" />
+		</p>
+		<p><span id="spParkingFeeResult">$0</span></p>
+	</div>
+	<script type="text/javascript">
+
+	$("#btnLot").click(function () {
+		var lot = $("#txtLot").val();
+		if (lot.length == 0)
+			lot = 'full';
+		$.ajax({
+            type: "GET",
+            contentType: "application/json",
+			url: "https://dalcreatives.com/ParkingChallenge/ParkingService.svc/GetParkingAvailability/" + lot,
+			success: function (data) {
+				if (data.ParkingAvailableValue)
+					$("#spParkingAvailableResult").html("Parking is available");
+				else
+					$("#spParkingAvailableResult").html("Parking is full");
+           },
+            error: function (result) {
+                alert(result);
+            }
+        });
+    });
+	$("#btnTicket").click(function () {
+		var ticket = $("#txtTicket").val();
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "https://dalcreatives.com/ParkingChallenge/ParkingService.svc/GetParkingFee/" + ticket,
+			success: function (data) {
+				$("#spParkingFeeResult").html("$" + data.ParkingFeeValue);
+			},
+			error: function (result) {
+				alert(result);
+			}
+		});
+	});
+	</script>
+
+</body>
+</html>
+
