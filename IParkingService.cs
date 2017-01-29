@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwaggerWcf.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -21,6 +22,7 @@ namespace ParkingChallenge
 		ParkingAvailableType GetParkingAvailability(string lot);
 
 		[OperationContract]
+		//[SwaggerWcfPath("Swagger test", "Test Swagger connectivity and display")]
 		[WebGet(UriTemplate = "/GetParkingTest",
 		RequestFormat = WebMessageFormat.Json,
 		ResponseFormat = WebMessageFormat.Json)]

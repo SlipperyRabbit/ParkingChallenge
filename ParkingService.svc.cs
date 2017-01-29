@@ -1,9 +1,11 @@
 ﻿using ParkingChallengeLibrary;
+using SwaggerWcf.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 
@@ -12,6 +14,8 @@ namespace ParkingChallenge
 	/// <summary>
 	/// Parking Challenge Services
 	/// </summary>
+	//[AspNetCompatibilityRequirements( RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+	//[SwaggerWcf("/v1/rest")]
 	public class ParkingService : IParkingService
 	{
 		/// <summary>
@@ -44,6 +48,11 @@ namespace ParkingChallenge
 			return feeType;
 		}
 
+		/// <summary>
+		/// Test routine
+		/// </summary>
+		/// <returns>True</returns>
+		//[SwaggerWcfTag("Tests")]
 		public bool GetParkingTest()
 		{
 			return true;
