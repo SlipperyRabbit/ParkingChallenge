@@ -24,11 +24,10 @@
 		<p><span id="spParkingFeeResult">$0</span></p>
 	</div>
 	<script type="text/javascript">
-		//var url = "https://dalcreatives.com";
-		var u = "http://localhost";
+		var baseUrl = "http://localhost";
 		if (location.protocol == 'https:')
 		{
-			u = "https://localhost";
+			baseUrl = "https://dalcreatives.com";
 		}
 	$("#btnLot").click(function () {
 		var lot = $("#txtLot").val();
@@ -37,7 +36,7 @@
 		$.ajax({
             type: "GET",
             contentType: "application/json",
-			url: u + "/ParkingChallenge/ParkingService.svc/GetParkingAvailability/" + lot,
+            url: baseUrl + "/ParkingChallenge/ParkingService.svc/GetParkingAvailability/" + lot,
 			success: function (data) {
 				if (data.ParkingAvailableValue)
 					$("#spParkingAvailableResult").html("Parking is available");
@@ -54,7 +53,7 @@
 		$.ajax({
 			type: "GET",
 			contentType: "application/json",
-			url: u + "/ParkingChallenge/ParkingService.svc/GetParkingFee/" + ticket,
+			url: baseUrl + "/ParkingChallenge/ParkingService.svc/GetParkingFee/" + ticket,
 			success: function (data) {
 				$("#spParkingFeeResult").html("$" + data.ParkingFeeValue);
 			},

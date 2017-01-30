@@ -17,8 +17,6 @@ namespace ParkingChallenge
 		protected void Application_Start(object sender, EventArgs e)
 		{
 			RouteTable.Routes.Add(new ServiceRoute("api-docs", new WebServiceHostFactory(), typeof(SwaggerWcfEndpoint)));
-			//var swaggerHost = new WebServiceHost(typeof(SwaggerWcfEndpoint));
-			//swaggerHost.Open();
 		}
 
 		protected void Session_Start(object sender, EventArgs e)

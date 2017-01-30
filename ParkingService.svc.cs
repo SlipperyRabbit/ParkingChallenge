@@ -19,7 +19,7 @@ namespace ParkingChallenge
 	public class ParkingService : IParkingService
 	{
 		/// <summary>
-		/// Get Parking Available
+		/// Get Parking Availability for a parking lot
 		/// </summary>
 		/// <param name="lot">The parking lot to find available parking spaces</param>
 		/// <returns>Returns a Parking Available Type (True/False)</returns>

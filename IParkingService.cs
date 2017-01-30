@@ -35,7 +35,6 @@ namespace ParkingChallenge
 		[WebGet(UriTemplate = "/GetParkingFee/{ticket}", 
 		RequestFormat = WebMessageFormat.Json, 
 		ResponseFormat = WebMessageFormat.Json)]
-		////[WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json,	ResponseFormat = WebMessageFormat.Json,		UriTemplate = "/GetParkingFee?ticket={ticket}")]
 		ParkingFeeType GetParkingFee(string ticket);
 	}
 
