@@ -59,5 +59,25 @@ namespace ParkingChallenge
 		{
 			return true;
 		}
+
+		/// <summary>
+		/// Throw a test exception
+		/// </summary>
+		/// <returns>True</returns>
+		[SwaggerWcfTag("ThrowTestException")]
+		public bool ThrowTestException()
+		{
+			bool success = false;
+			try
+			{
+				Elmah.ErrorSignal.FromCurrentContext().Raise(new Exception("Test Exception"));
+				success = true;
+			}
+			catch (Exception)
+			{
+				success = false;
+			}
+			return success;
+		}
 	}
 }

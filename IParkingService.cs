@@ -36,6 +36,13 @@ namespace ParkingChallenge
 		RequestFormat = WebMessageFormat.Json, 
 		ResponseFormat = WebMessageFormat.Json)]
 		ParkingFeeType GetParkingFee(string ticket);
+
+		[OperationContract]
+		[SwaggerWcfPath("Test error handling", "Throw a test exception")]
+		[WebGet(UriTemplate = "/ThrowTestException",
+		RequestFormat = WebMessageFormat.Json,
+		ResponseFormat = WebMessageFormat.Json)]
+		bool ThrowTestException();
 	}
 
 	[DataContract]
