@@ -40,7 +40,7 @@ namespace ParkingChallenge
 	}
 
 	[DataContract]
-	[SwaggerWcf("/v1/rest")]
+	[SwaggerWcf("")]
 	[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
 	public class ParkingAvailableType
 	{
@@ -55,7 +55,7 @@ namespace ParkingChallenge
 	}
 
 	[DataContract]
-	[SwaggerWcf("/v1/rest")]
+	[SwaggerWcf("")]
 	public class ParkingFeeType
 	{
 		decimal parkingFee = 0.0m;

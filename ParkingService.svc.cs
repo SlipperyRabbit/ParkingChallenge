@@ -15,7 +15,7 @@ namespace ParkingChallenge
 	/// Parking Challenge Services
 	/// </summary>
 	[AspNetCompatibilityRequirements( RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-	[SwaggerWcf("/v1/rest")]
+	[SwaggerWcf("/ParkingChallenge/ParkingService.svc")]
 	public class ParkingService : IParkingService
 	{
 		/// <summary>
