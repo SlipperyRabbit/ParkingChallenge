@@ -26,6 +26,10 @@
 	<script type="text/javascript">
 		//var url = "https://dalcreatives.com";
 		var u = "http://localhost";
+		if (location.protocol == 'https:')
+		{
+			u = "https://localhost";
+		}
 	$("#btnLot").click(function () {
 		var lot = $("#txtLot").val();
 		if (lot.length == 0)

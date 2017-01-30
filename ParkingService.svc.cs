@@ -14,8 +14,8 @@ namespace ParkingChallenge
 	/// <summary>
 	/// Parking Challenge Services
 	/// </summary>
-	//[AspNetCompatibilityRequirements( RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-	//[SwaggerWcf("/v1/rest")]
+	[AspNetCompatibilityRequirements( RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+	[SwaggerWcf("/v1/rest")]
 	public class ParkingService : IParkingService
 	{
 		/// <summary>
@@ -52,7 +52,7 @@ namespace ParkingChallenge
 		/// Test routine
 		/// </summary>
 		/// <returns>True</returns>
-		//[SwaggerWcfTag("Tests")]
+		[SwaggerWcfTag("Tests")]
 		public bool GetParkingTest()
 		{
 			return true;
