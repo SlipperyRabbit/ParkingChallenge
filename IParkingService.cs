@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 
@@ -16,6 +17,7 @@ namespace ParkingChallenge
 	public interface IParkingService
 	{
 		[OperationContract]
+		[SwaggerWcfPath("Get Parking Availability", "Get the parking availability for the given lot.")]
 		[WebGet(UriTemplate = "/GetParkingAvailability/{lot}",
 		RequestFormat = WebMessageFormat.Json,
 		ResponseFormat = WebMessageFormat.Json)]
@@ -29,6 +31,7 @@ namespace ParkingChallenge
 		bool GetParkingTest();
 		
 		[OperationContract]
+		[SwaggerWcfPath("Get Parking Fee", "Get the Parking Fee for the given parking ticket")]
 		[WebGet(UriTemplate = "/GetParkingFee/{ticket}", 
 		RequestFormat = WebMessageFormat.Json, 
 		ResponseFormat = WebMessageFormat.Json)]
@@ -37,6 +40,8 @@ namespace ParkingChallenge
 	}
 
 	[DataContract]
+	[SwaggerWcf("/v1/rest")]
+	[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
 	public class ParkingAvailableType
 	{
 		bool parkingAvailable = true;
@@ -50,6 +55,7 @@ namespace ParkingChallenge
 	}
 
 	[DataContract]
+	[SwaggerWcf("/v1/rest")]
 	public class ParkingFeeType
 	{
 		decimal parkingFee = 0.0m;

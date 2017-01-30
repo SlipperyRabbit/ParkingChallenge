@@ -23,6 +23,7 @@ namespace ParkingChallenge
 		/// </summary>
 		/// <param name="lot">The parking lot to find available parking spaces</param>
 		/// <returns>Returns a Parking Available Type (True/False)</returns>
+		[SwaggerWcfTag("GetParkingAvailability")]
 		public ParkingAvailableType GetParkingAvailability(string lot)
 		{
 			ParkingAvailableType availableType = new ParkingAvailableType();
@@ -37,7 +38,8 @@ namespace ParkingChallenge
 		/// Get the parking fee for a given ticket
 		/// </summary>
 		/// <param name="ticket">A parking ticket identifier</param>
-		/// <returns>A Parking Fee Type (decimal money value)</returns>		
+		/// <returns>A Parking Fee Type (decimal money value)</returns>	
+		[SwaggerWcfTag("GetParkingFees")]
 		public ParkingFeeType GetParkingFee(string ticket)
 		{
 			ParkingFeeType feeType = new ParkingFeeType();
@@ -52,7 +54,7 @@ namespace ParkingChallenge
 		/// Test routine
 		/// </summary>
 		/// <returns>True</returns>
-		[SwaggerWcfTag("Tests")]
+		[SwaggerWcfTag("GetParkingTest")]
 		public bool GetParkingTest()
 		{
 			return true;
