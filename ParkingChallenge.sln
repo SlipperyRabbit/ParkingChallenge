@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingChallenge.Test", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingChallengeLibrary", "ParkingChallengeLibrary\ParkingChallengeLibrary.csproj", "{81C3B842-B157-4911-A21E-331AAF9E586B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingChallengeAPI", "ParkingChallengeAPI\ParkingChallengeAPI.csproj", "{07546837-5771-4B0E-BDD6-8F80EED28F0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{81C3B842-B157-4911-A21E-331AAF9E586B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81C3B842-B157-4911-A21E-331AAF9E586B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81C3B842-B157-4911-A21E-331AAF9E586B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07546837-5771-4B0E-BDD6-8F80EED28F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07546837-5771-4B0E-BDD6-8F80EED28F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07546837-5771-4B0E-BDD6-8F80EED28F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07546837-5771-4B0E-BDD6-8F80EED28F0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
