@@ -35,5 +35,8 @@ Import a web deploy package for your server and configure the virtual directory 
 ###Running the tests
 I have configured a simple implementation of the two services in the challenge here.  (https://dalcreatives.com/lambertshowsoff/parkingchallenge)  I have also added an Implementation.html file for review of ajax calls (https://dalcreatives.com/parkingchallenge/Implementation.html).  Note:  I have only added three parking tickets (1, 2, 3).  Any lot other then "full" or an empty string will show as available parking.
 
+There is also a Web API 2 version that can be tested here https://dalcreatives.com/parkingchallengeapi/ 
+
 ###API Documentation
 There is a Swagger API site at https://dalcreatives.com/parkingchallenge/api-docs
+There is a Swagger API site for the Web API 2 project here https://dalcreatives.com/parkingchallengeapi/swagger 
