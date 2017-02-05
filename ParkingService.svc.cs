@@ -64,7 +64,7 @@ namespace ParkingChallenge
 		/// Throw a test exception
 		/// </summary>
 		/// <returns>True</returns>
-		[SwaggerWcfTag("ThrowTestException")]
+		[SwaggerWcfTag("ExceptionTest")]
 		public bool ThrowTestException()
 		{
 			bool success = false;

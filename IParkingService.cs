@@ -39,7 +39,7 @@ namespace ParkingChallenge
 
 		[OperationContract]
 		[SwaggerWcfPath("Test error handling", "Throw a test exception")]
-		[WebGet(UriTemplate = "/ThrowTestException",
+		[WebGet(UriTemplate = "/ExceptionTest",
 		RequestFormat = WebMessageFormat.Json,
 		ResponseFormat = WebMessageFormat.Json)]
 		bool ThrowTestException();
