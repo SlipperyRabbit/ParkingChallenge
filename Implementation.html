@@ -9,6 +9,7 @@
 	<h2>Parking Challenge</h2>
 
 	<div>
+		<h1>WCF service implementation</h1>
 		<p>
 			Enter Lot to determine parking availablity&nbsp;&nbsp;
 			<input type="text" id="txtLot" value="Lot" />
@@ -22,6 +23,22 @@
 			<input type="button" id="btnTicket" value="Parking Fee" />
 		</p>
 		<p><span id="spParkingFeeResult">$0</span></p>
+	</div>
+	<div>
+		<h1>Web API 2 service implementation</h1>
+		<p>
+			Enter Lot to determine parking availablity&nbsp;&nbsp;
+			<input type="text" id="txtLotApi" value="Lot" />
+			<input type="button" id="btnLotApi" value="Parking Available" />
+		</p>
+		<p><span id="spParkingAvailableResultApi"></span></p>
+		<br /><br />
+		<p>
+			Enter ticket number to determine fee&nbsp;&nbsp;
+			<input type="text" id="txtTicketApi" value="1" />
+			<input type="button" id="btnTicketApi" value="Parking Fee" />
+		</p>
+		<p><span id="spParkingFeeResultApi">$0</span></p>
 	</div>
 	<script type="text/javascript">
 		var baseUrl = "http://localhost";
@@ -56,6 +73,39 @@
 			url: baseUrl + "/ParkingChallenge/ParkingService.svc/GetParkingFee/" + ticket,
 			success: function (data) {
 				$("#spParkingFeeResult").html("$" + data.ParkingFeeValue);
+			},
+			error: function (result) {
+				alert(result);
+			}
+		});
+	});
+	$("#btnLotApi").click(function () {
+		var lot = $("#txtLotApi").val();
+		if (lot.length == 0)
+			lot = 'full';
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "../ParkingChallengeApi/api/ParkingAvailability?lot=" + lot,
+			success: function (data) {
+				if (data.ParkingAvailableValue)
+					$("#spParkingAvailableResultApi").html("Parking is available");
+				else
+					$("#spParkingAvailableResultApi").html("Parking is full");
+			},
+			error: function (result) {
+				alert(result);
+			}
+		});
+	});
+	$("#btnTicketApi").click(function () {
+		var ticket = $("#txtTicketApi").val();
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "../ParkingChallengeApi/api/ParkingFee?ticket=" + ticket,
+			success: function (data) {
+				$("#spParkingFeeResultApi").html("$" + data.ParkingFeeValue);
 			},
 			error: function (result) {
 				alert(result);
